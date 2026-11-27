@@ -12,18 +12,62 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Unzip project
+      - name: Arrange project files
         run: |
           set -e
-          for z in *.zip; do
-            [ -f "$z" ] && unzip -q -o "$z" -d .
-          done
-          ls -la
-          if [ ! -f build.gradle ]; then
-            echo "::error::build.gradle nahi mila - project zip upload karein"
-            exit 1
+          mkdir -p app/src/main/java/com/mrdmpopcenter/app
+          mkdir -p app/src/main/assets/icons
+          mkdir -p app/src/main/res/values
+          for d in mdpi hdpi xhdpi xxhdpi xxxhdpi; do mkdir -p app/src/main/res/mipmap-$d; done
+
+          [ -f MainActivity.java ] && mv MainActivity.java app/src/main/java/com/mrdmpopcenter/app/
+          [ -f AndroidManifest.xml ] && mv AndroidManifest.xml app/src/main/
+          [ -f strings.xml ] && mv strings.xml app/src/main/res/values/
+          [ -f proguard-rules.pro ] && mv proguard-rules.pro app/
+
+          if [ -f ic_launcher.png ]; then
+            for d in mdpi hdpi xhdpi xxhdpi xxxhdpi; do
+              cp ic_launcher.png app/src/main/res/mipmap-$d/ic_launcher.png
+            done
           fi
+
+          for f in index.html styles.css app.js manifest.json sw.js; do
+            [ -f "$f" ] && mv "$f" app/src/main/assets/
+          done
+          for f in icon-192.png icon-512.png icon-maskable-512.png apple-touch-icon.png favicon-32.png; do
+            [ -f "$f" ] && mv "$f" app/src/main/assets/icons/
+          done
+
+          cat > app/build.gradle <<'GRADLE'
+          plugins {
+              id 'com.android.application'
+          }
+
+          android {
+              namespace 'com.mrdmpopcenter.app'
+              compileSdk 34
+
+              defaultConfig {
+                  applicationId "com.mrdmpopcenter.app"
+                  minSdk 23
+                  targetSdk 34
+                  versionCode 2
+                  versionName "1.1.0"
+              }
+
+              compileOptions {
+                  sourceCompatibility JavaVersion.VERSION_17
+                  targetCompatibility JavaVersion.VERSION_17
+              }
+          }
+
+          dependencies {
+              implementation 'androidx.webkit:webkit:1.11.0'
+          }
+          GRADLE
+
           echo "sdk.dir=$ANDROID_HOME" > local.properties
+          find app -type f | sort
 
       - uses: actions/setup-java@v4
         with:
@@ -45,3 +89,4 @@ jobs:
           name: mrdm-pop-center-apk
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+          
