@@ -1,0 +1,29 @@
+APK BANANE KE STEPS (2 minute)
+==============================
+Is zip ke andar poora Android project hai.
+
+STEP 1 — Upload
+  GitHub repo kholein -> Add file -> Upload files ->
+  is zip ke ANDAR ke saare files drag karein -> Commit changes.
+  (Zip ko extract karke andar ka content upload karein.
+   .github folder bhi upload karein — usme build workflow hai.)
+
+STEP 2 — Build
+  Repo ka "Actions" tab kholein -> "Build APK" -> "Run workflow"
+  (upload karte hi apne aap bhi shuru ho jata hai).
+  ~4 minute wait karein.
+
+STEP 3 — APK download
+  Actions -> latest run -> neeche "Artifacts" ->
+  "mrdm-pop-center-apk" download -> andar app-debug.apk.
+  Wahi file phone mein install karein.
+
+AGAR .github FOLDER UPLOAD NA HO
+  Add file -> Create new file -> naam:
+  .github/workflows/build-apk.yml
+  aur is zip ke andar maujood .github/workflows/build-apk.yml
+  ka content paste kar dein.
+
+APK DEBUG-SIGNED HAI
+  Phone par install hoti hai ("Install anyway" allow karein).
+  Play Store par daalne ke liye release keystore chahiye hoga.
