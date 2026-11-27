@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MR DM P.O.P CENTER — Plaster of Paris &amp; Interior Finishing</title>
+<meta name="description" content="MR DM P.O.P CENTER — precision Plaster of Paris (P.O.P) craftsmanship: false ceiling, wall molding, minus plus work, jali plaster, cornice detailing and complete interior finishing.">
+<meta name="theme-color" content="#15171c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MRDM P.O.P">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#home">
+      <span class="brand-logo" id="brandLogo">
+        <span id="brandMono">MD</span>
+        <button type="button" class="up" data-upload="brand.logo" style="position:absolute;right:-4px;bottom:-4px;padding:4px 6px;font-size:10px">Logo</button>
+      </span>
+      <span class="brand-text">
+        <strong data-bind="brand.name">MR DM P.O.P CENTER</strong>
+        <small data-bind="brand.tagline">Plaster of Paris &amp; Interior Finishing</small>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <button class="icon-btn install-btn" id="installBtn" title="Install app on this device" hidden></button>
+      <button class="icon-btn" id="editToggle" title="Edit content" aria-label="Edit content"></button>
+      <button class="icon-btn" id="adminLock" title="Admin" aria-label="Admin access"></button>
+      <button class="icon-btn menu-btn" id="menuBtn" title="Menu" aria-label="Menu"></button>
+    </div>
+  </div>
+  <div class="nav-wrap">
+    <nav class="nav" id="nav" aria-label="Main menu"></nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= 01 HOME ================= -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="section-head" style="max-width:860px;margin-bottom:0">
+        <span class="eyebrow">01 — Home</span>
+        <h1 data-bind="home.companyName">MR DM P.O.P CENTER</h1>
+        <div class="tagline" data-bind="home.tagline">Precision Plaster of Paris (P.O.P) Craftsmanship</div>
+        <div class="desc" data-bind="home.description">Precision Plaster of Paris (P.O.P) craftsmanship and interior finishing for homes, offices, and commercial spaces — built for clean lines, durability, and timely site execution.</div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#services">View Services</a>
+          <a class="btn btn-gold" href="#gallery">See Our Work</a>
+          <a class="btn btn-ghost" href="#contacts">Contact Us</a>
+        </div>
+      </div>
+      <div class="home-gallery" id="homeImgs" style="margin-top:38px"></div>
+    </div>
+  </section>
+
+  <!-- ================= 02 DASHBOARD ================= -->
+  <section class="section" id="dashboard">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">02 — Dashboard</span>
+        <h2>Dashboard</h2>
+        <p class="sub">Payment history, ex-employees, and present employees in one place. Turn on Edit mode to update any figure.</p>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat"><small>Total Billed</small><b id="statTotal">₹0</b><span>All recorded work</span></div>
+        <div class="stat"><small>Received</small><b id="statPaid">₹0</b><span>Paid entries</span></div>
+        <div class="stat"><small>Pending</small><b id="statPending">₹0</b><span>Follow-up needed</span></div>
+        <div class="stat"><small>Entries</small><b id="statCount">0</b><span>Payment records</span></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Payment History</h3>
+          <button class="btn btn-ghost btn-sm edit-only" id="btnAddPay">+ Add Row</button>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl" id="payTable">
+            <thead>
+              <tr><th>Date</th><th>Client</th><th>Project</th><th>Amount (₹)</th><th>Method</th><th>Status</th><th class="edit-only"></th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head"><h3>Present Employees</h3></div>
+          <div class="chip-list" id="presentEmp"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Ex-Employees</h3></div>
+          <div class="chip-list" id="exEmp"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 SERVICES ================= -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">03 — Services</span>
+        <h2 data-bind="services.heading">SERVICES</h2>
+        <p class="sub" data-bind="services.subheading">Specialist in Plaster of Paris craftsmanship.</p>
+      </div>
+      <div class="grid-3" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= 04 PORTFOLIO ================= -->
+  <section class="section" id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">04 — Portfolio</span>
+        <h2 data-bind="portfolio.heading">PORTFOLIO</h2>
+        <p class="sub" data-bind="portfolio.subheading">Selected P.O.P and interior finishing work.</p>
+      </div>
+      <div class="grid-3" id="portfolioGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= 05 GALLERY ================= -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">05 — Gallery</span>
+        <h2 data-bind="gallery.heading">GALLERY</h2>
+        <p class="sub" data-bind="gallery.subheading">Browse work photos by category.</p>
+      </div>
+      <div class="tabs" id="galTabs"></div>
+      <div class="gal-grid" id="galGrid"></div>
+      <div class="gal-tools" id="galTools"></div>
+    </div>
+  </section>
+
+  <!-- ================= 06 EMPLOYEE ================= -->
+  <section class="section" id="employee">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">06 — Employee</span>
+        <h2 data-bind="employee.heading">TEAM &amp; EMPLOYEE DIRECTORY</h2>
+        <p class="sub" data-bind="employee.subheading">Verified team members, roles, ID numbers and ID cards.</p>
+      </div>
+
+      <label class="search-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="empSearch" placeholder="Search by Name, ID No (e.g., MRDM-0001), Role, or Area...">
+      </label>
+
+      <div class="emp-grid" id="empGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= 07 PAYMENT METHOD ================= -->
+  <section class="section" id="payment">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">07 — Payment Method</span>
+        <h2 data-bind="payment.heading">PAYMENT METHOD</h2>
+        <p class="sub" data-bind="payment.subheading">Convenient and transparent payment options.</p>
+      </div>
+
+      <div class="pay-grid">
+        <div class="pay-card">
+          <h3>UPI &amp; QR Code Payment</h3>
+          <p>Scan the QR code or use our UPI ID for quick advance and milestone payments through any UPI app.</p>
+          <div class="qr-area">
+            <div id="payQr"></div>
+            <div style="flex:1;min-width:200px">
+              <div class="upi-row">
+                <span>UPI ID:</span>
+                <b data-bind="payment.upiId">yourname@upi</b>
+                <button class="btn btn-ghost btn-sm" data-copy="upi">Copy</button>
+              </div>
+              <p class="copy-note" style="margin-top:10px">Works with GPay, PhonePe, Paytm, BHIM and any UPI app.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pay-card">
+          <h3>Direct Call / Payment Confirmation</h3>
+          <p data-bind="payment.confirmNote">Share the payment reference or screenshot on WhatsApp or call for quick confirmation.</p>
+          <div class="upi-row" style="font-family:inherit">
+            <span>WhatsApp / Call:</span>
+            <b data-bind="payment.whatsapp">1234567890</b>
+          </div>
+          <div class="hero-cta" style="margin-top:4px">
+            <a class="btn btn-gold btn-sm" id="payWa" href="#" target="_blank" rel="noopener">Send Payment Proof</a>
+            <a class="btn btn-ghost btn-sm" id="payCall" href="#">Call Now</a>
+          </div>
+          <p class="copy-note">Bank Transfer (optional): <span data-bind="payment.bankNote">Bank details / invoice can be shared on request.</span></p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="panel-head">
+          <h3>Copy-Paste Payment Text</h3>
+          <button class="btn btn-ghost btn-sm" data-copy="block">Copy Block</button>
+        </div>
+        <div class="modal-body">
+          <div class="copy-block" id="payBlock"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 08 CONTACTS ================= -->
+  <section class="section" id="contacts">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">08 — Contacts</span>
+        <h2 data-bind="contacts.heading">CONTACTS</h2>
+        <p class="sub" data-bind="contacts.subheading">Reach out by call, WhatsApp, email or Instagram.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="contact-group">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> Call</h3>
+          <div id="callList"></div>
+        </div>
+        <div class="contact-group">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-3.2-6.4"/><path d="M3 21l1.6-4.4"/></svg> WhatsApp</h3>
+          <div id="waList"></div>
+        </div>
+        <div class="contact-group">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email</h3>
+          <div id="mailList"></div>
+        </div>
+        <div class="contact-group">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg> Instagram</h3>
+          <div id="instaList"></div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="panel-head">
+          <h3>Copy-Paste Contact Block</h3>
+          <button class="btn btn-ghost btn-sm" data-copy="contacts">Copy Block</button>
+        </div>
+        <div class="modal-body"><div class="copy-block" id="contactBlock"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 09 SELF-PROFILE ================= -->
+  <section class="section" id="profile">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">09 — Self-Profile</span>
+        <h2 data-bind="profile.heading">SELF-PROFILE</h2>
+        <p class="sub" data-bind="profile.subheading">Owner &amp; organizer profile, office address, admin access, personal ID card.</p>
+      </div>
+
+      <div class="profile-grid">
+        <div class="profile-card">
+          <div class="avatar" id="profilePhotoSmall">Logo</div>
+          <h3 data-bind="profile.name">MDM BOSS</h3>
+          <div class="role" data-bind="profile.role">BOSS</div>
+          <div class="bio" data-bind="profile.bio">Leading MR DM P.O.P CENTER with focus on false ceiling, wall molding, minus plus work, jali plaster, and reliable interior execution.</div>
+          <div class="addr" data-bind="profile.address">Office Address, Area, City, Pin Code</div>
+          <div class="hero-cta" style="justify-content:center;margin-top:16px">
+            <a class="btn btn-ghost btn-sm" id="profileMaps" href="#" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+        </div>
+
+        <div class="panel" style="margin:0">
+          <div class="panel-head"><h3>Profile Details</h3></div>
+          <div class="modal-body">
+            <div class="field-row"><span class="k">A · Company Name</span><span class="v" data-bind="profile.company">MR DM P.O.P CENTER</span></div>
+            <div class="field-row"><span class="k">B · Profile Photo / Logo</span><span class="v" style="max-width:230px" id="profilePhoto"></span></div>
+            <div class="field-row"><span class="k">C · Name</span><span class="v" data-bind="profile.name">MDM BOSS</span></div>
+            <div class="field-row"><span class="k">D · Role / Tagline</span><span class="v" data-bind="profile.role">BOSS</span></div>
+            <div class="field-row"><span class="k">F · Office Address</span><span class="v" style="max-width:60%" data-bind="profile.address">Office Address, Area, City, Pin Code</span></div>
+            <div class="field-row">
+              <span class="k">G · Admins Permission</span>
+              <span class="v">
+                <label class="switch"><input type="checkbox" id="adminAccessSwitch"><span id="adminAccessLabel">Admin Access: Enabled</span></label>
+              </span>
+            </div>
+            <div class="field-row">
+              <span class="k">H · My ID Card</span>
+              <span class="v"><button class="btn btn-primary btn-sm" data-idcard="0">Open / View ID Card</button></span>
+            </div>
+            <div class="field-row"><span class="k">Maps Link</span><span class="v" style="max-width:60%" data-bind="profile.maps">https://maps.google.com</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10 ADMIN ================= -->
+  <section class="section" id="admin">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">10 — Admin</span>
+        <h2 data-bind="admin.heading">ADMIN</h2>
+        <p class="sub">Core control rules: menu visibility, Admin IDs, work history, footprint and permissions. Only a Super Admin sees this section.</p>
+      </div>
+
+      <div id="adminGate" class="locked">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        <p><b>Admin area is hidden.</b><br>Normal admins do not see this menu item or its records. Unlock with the Super Admin PIN (lock icon in the header) to view Admin IDs, work history, footprint and permissions.</p>
+      </div>
+
+      <div id="adminContent" style="display:none">
+        <div class="admin-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3 4 6v6c0 5 3.4 8.2 8 9 4.6-.8 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div>Menu visibility: the <b>ADMIN</b> item stays hidden for normal admins and appears only for the Super Admin. Admin IDs are read-only. Footprint logs are audit records — normal admins cannot edit or delete them.</div>
+        </div>
+
+        <label class="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" id="adminSearch" placeholder="Search by Admin name, Admin ID, email, or role...">
+        </label>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Admin IDs</h3></div>
+          <div class="tbl-wrap">
+            <table class="tbl" id="adminTable">
+              <thead><tr><th>Admin ID</th><th>Name</th><th>Role</th><th>Email</th><th>Status</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Admin Work History</h3>
+              <button class="btn btn-ghost btn-sm edit-only" id="btnAddHistory">+ Add Entry</button>
+            </div>
+            <div class="tbl-wrap">
+              <table class="tbl" id="adminHistory">
+                <thead><tr><th>Admin ID</th><th>Time</th><th>Action</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Admin Footprint (Audit)</h3></div>
+            <div class="tbl-wrap">
+              <table class="tbl" id="adminFoot">
+                <thead><tr><th>Admin ID</th><th>Event</th><th>Time</th><th>IP / Device</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Admin Permission Matrix</h3></div>
+          <div class="tbl-wrap">
+            <table class="tbl matrix" id="permTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11 ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">11 — About</span>
+        <h2 data-bind="about.heading">ABOUT MR DM P.O.P CENTER</h2>
+        <p class="sub" data-bind="about.subheading">Our identity, specialties, working process, client value, privacy policy, and clear terms &amp; conditions.</p>
+      </div>
+
+      <div class="about-grid" id="aboutGrid"></div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="panel-head">
+          <h3>Copy-Paste About Block</h3>
+          <button class="btn btn-ghost btn-sm" data-copy="about">Copy Block</button>
+        </div>
+        <div class="modal-body"><div class="copy-block" id="aboutBlock"></div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="fbrand">
+          <span class="brand-logo" style="width:38px;height:38px;border-radius:11px;font-size:12px">MD</span>
+          <b id="footBrand">MR DM P.O.P CENTER</b>
+        </div>
+        <p id="footTag">Plaster of Paris &amp; Interior Finishing</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <div id="footNav"></div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div id="footContact"></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footYear">2026</span> MR DM P.O.P CENTER · All rights reserved</span>
+      <span class="stamp" id="buildStamp">v1.0.0</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= EDIT TOOLBAR ================= -->
+<div class="editbar" id="editbar">
+  <span class="tag">Edit mode</span>
+  <button id="editDone">✓ Done</button>
+  <button id="btnBackup">⬇ Backup</button>
+  <button id="btnRestore">⬆ Restore</button>
+  <button id="btnReset">↺ Reset</button>
+</div>
+
+<!-- ================= ID CARD MODAL ================= -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="modalTitle">Employee ID Card</h3>
+      <button class="icon-btn" style="background:#f2efe8;color:#15171c;border-color:#e4e0d6" data-close-modal>✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js?v=2"></script>
+<script>document.getElementById('footYear').textContent = new Date().getFullYear();</script>
+<script>
+  // App install (PWA) + offline shell
+  (function () {
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function () {});
+      });
+    }
+    var btn = document.getElementById('installBtn');
+    var deferred = null;
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      deferred = e;
+      if (btn) { btn.hidden = false; }
+    });
+    if (btn) {
+      btn.addEventListener('click', function () {
+        if (!deferred) {
+          alert('Browser menu (⋮) kholein → "Add to Home screen" / "Install app" dabaiye.');
+          return;
+        }
+        deferred.prompt();
+        deferred.userChoice.then(function (res) {
+          if (res && res.outcome === 'accepted' && window.__toast) window.__toast('App installed');
+          deferred = null;
+          btn.hidden = true;
+        });
+      });
+    }
+    window.addEventListener('appinstalled', function () {
+      if (btn) btn.hidden = true;
+      if (window.__toast) window.__toast('App installed — home screen par icon dekhein');
+    });
+  })();
+</script>
+</body>
+</html>
